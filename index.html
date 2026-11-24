@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大湖草莓入門｜苗栗縣大湖鄉</title>
+  <meta name="description" content="苗栗大湖草莓簡介、產季月份表、採果注意事項與官方網站連結。">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header>
+    <p class="brand"><span aria-hidden="true">🍓</span> 大湖草莓入門</p>
+    <nav aria-label="主要導覽">
+      <a href="#intro">介紹</a>
+      <a href="#season">產季</a>
+      <a href="#tips">注意事項</a>
+      <a href="#links">官方連結</a>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- 一、介紹 -->
+    <section id="intro" class="hero">
+      <h1>苗栗大湖：台灣的「草莓之鄉」</h1>
+      <img src="images/hero.svg" alt="自製插畫：遠方山丘與太陽下，一排排紅色草莓長在田裡" width="600" height="200">
+      <p>交通部觀光署介紹：大湖草莓栽種面積五百多公頃，面積與產量約占全國 80%，草莓是大湖主要的經濟作物，因此被稱為「草莓之鄉」。<a href="#S2">[S2]</a></p>
+      <p>農業部 104 年（2015）的文章提到，大湖栽培草莓已超過 40 年，品種以豐香為主，當時栽種面積約 400 公頃。<a href="#S7">[S7]</a></p>
+      <p>台3線旁有大湖草莓文化館（民國 93 年開館，有草莓生態展示與農特產品展售）<a href="#S2">[S2]</a>，以及官網自稱「亞洲第一個草莓製酒廠」的大湖酒莊。<a href="#S3">[S3]</a></p>
+    </section>
+
+    <!-- 二、產季月份表（JS：標出「本月」＋依狀態篩選） -->
+    <section id="season">
+      <h2>產季：哪個月份有草莓？</h2>
+      <p>鄉公所寫草莓產期為 11 月至 4 月 <a href="#S1">[S1]</a>，苗栗文化觀光旅遊網寫 11 月底至翌年 4 月初 <a href="#S8">[S8]</a>；2026-2027 大湖草莓季活動期間為 2026/11/14～2027/4/30 <a href="#S5">[S5]</a>。</p>
+      <!-- 篩選按鈕：預設 hidden，有 JS 才顯示；沒有 JS 時直接看完整月份表 -->
+      <div id="filters" class="filters" role="group" aria-label="依產季狀態篩選月份" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" data-filter="in" aria-pressed="false">產季內</button>
+        <button type="button" data-filter="edge" aria-pressed="false">頭尾月份</button>
+        <button type="button" data-filter="out" aria-pressed="false">非產季</button>
+      </div>
+      <p id="filter-result" class="result" aria-live="polite"></p>
+      <div class="table-wrap">
+      <table>
+        <caption>大湖草莓產季月份表（依 S1、S5、S8 整理）</caption>
+        <thead><tr><th scope="col">月份</th><th scope="col">狀態</th><th scope="col">說明</th></tr></thead>
+        <tbody>
+          <tr data-status="in" data-month="1"><th scope="row">1 月</th><td class="in">✔ 產季內</td><td>主要產季，各來源一致</td></tr>
+          <tr data-status="in" data-month="2"><th scope="row">2 月</th><td class="in">✔ 產季內</td><td>主要產季，各來源一致</td></tr>
+          <tr data-status="in" data-month="3"><th scope="row">3 月</th><td class="in">✔ 產季內</td><td>主要產季，各來源一致</td></tr>
+          <tr data-status="edge" data-month="4"><th scope="row">4 月</th><td class="edge">！ 頭尾月份</td><td>產季尾聲，月底前往風險較高，請先電話確認</td></tr>
+          <tr data-status="out" data-month="5"><th scope="row">5 月</th><td class="out">✖ 非產季</td><td>草莓休園期</td></tr>
+          <tr data-status="out" data-month="6"><th scope="row">6 月</th><td class="out">✖ 非產季</td><td>草莓休園期</td></tr>
+          <tr data-status="out" data-month="7"><th scope="row">7 月</th><td class="out">✖ 非產季</td><td>草莓休園期</td></tr>
+          <tr data-status="out" data-month="8"><th scope="row">8 月</th><td class="out">✖ 非產季</td><td>草莓休園期</td></tr>
+          <tr data-status="out" data-month="9"><th scope="row">9 月</th><td class="out">✖ 非產季</td><td>草莓休園期</td></tr>
+          <tr data-status="out" data-month="10"><th scope="row">10 月</th><td class="out">✖ 非產季</td><td>草莓休園期</td></tr>
+          <tr data-status="edge" data-month="11"><th scope="row">11 月</th><td class="edge">！ 頭尾月份</td><td>剛開園，各園開園日不同，請先電話確認</td></tr>
+          <tr data-status="in" data-month="12"><th scope="row">12 月</th><td class="in">✔ 產季內</td><td>主要產季，各來源一致</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <!-- 三、重點注意事項 -->
+    <section id="tips">
+      <h2>出發前的重點注意事項</h2>
+      <ul class="tips">
+        <li><strong>產季：</strong>約 11 月至隔年 4 月，12～3 月最穩定，詳見上方月份表。<a href="#S1">[S1]</a><a href="#S5">[S5]</a></li>
+        <li><strong>先打電話：</strong>各園開園日不同，官方提醒「出發之前電話確認產量，才不會白跑一趟」。<a href="#S5">[S5]</a></li>
+        <li><strong>採果禮儀：</strong>不邊採邊吃、不採綠果、不剪花（白色的花會結果）、不跨越田埂，採完秤重計價。<a href="#S6">[S6]</a></li>
+        <li><strong>開車：</strong>國道1號苗栗／公館交流道 → 台72快速道路往大湖到底 → 台3線，大湖酒莊停車場免費。<a href="#S4">[S4]</a></li>
+        <li><strong>搭客運：</strong>到苗栗火車站後轉新竹客運 5656（苗栗—大湖），在「富興—大湖酒莊」站下車，約 50 分鐘。<a href="#S4">[S4]</a></li>
+      </ul>
+      <p class="note"><strong>！ 出發前請確認：</strong>客運班次與票價、各草莓園開園日與價格、草莓文化館營業時間。資訊可能變動，請以官方公告或果園電話為準。</p>
+    </section>
+
+    <!-- 四、官方網站連結 -->
+    <section id="links">
+      <h2>官方與相關網站</h2>
+      <ul class="links">
+        <li id="S1"><a href="https://www.dahu.gov.tw/cp.aspx?n=3243">大湖鄉公所－作物生產期</a>：鄉公所公布的大湖各種作物產期。</li>
+        <li id="S2"><a href="https://www.tad.gov.tw/m1.aspx?id=A12-00257&amp;sNo=0001110">交通部觀光署－大湖草莓文化館</a>：景點介紹、地址與電話。</li>
+        <li id="S3"><a href="https://www.dahufarm.org.tw/content/Dahu/intro.html">大湖酒莊（大湖地區農會）－草莓文化館簡介</a>：館內樓層與開放時間。</li>
+        <li id="S4"><a href="https://www.dahufarm.org.tw/content/Dahu/contact.html">大湖酒莊－交通資訊</a>：開車路線、客運 5656 與停車。</li>
+        <li id="S5"><a href="https://ezgo.ardswc.gov.tw/zh-tw/event/5519/">農業易遊網－2026-2027大湖草莓季</a>：活動期間與各區草莓園名單。</li>
+        <li id="S6"><a href="https://www.dahu.com.tw/">大湖旅遊網（民間網站，草莓季主辦）</a>：各園開園消息與採果禮儀宣導。</li>
+        <li id="S7"><a href="https://www.moa.gov.tw/ws.php?id=2502561">農業部－紅莓迎春樂（2015）</a>：大湖草莓歷史與品種介紹。</li>
+        <li id="S8"><a href="https://www.miaolitravel.net/Article.aspx?sNo=03005164">苗栗文化觀光旅遊網－採果指南</a>：苗栗各鄉鎮採果季節與地點。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>資料來源詳見「官方與相關網站」，取得日期 2026-11-11。插畫為本站自製。</p>
+    <p><small>© 2026 大湖草莓入門</small></p>
+  </footer>
+</body>
+</html>
